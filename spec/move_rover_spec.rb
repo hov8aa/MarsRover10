@@ -6,10 +6,10 @@ RSpec.describe "move_rover" do
 # 1. What happens in the happy path?
 #   Test case 1:
 #   If the input/instruction is L, the rover successfully turns Left
-    describe turn_left () do
-        it "If the input command is L, we turn the rover to Left " do
-            expect (new 
-            )
+    describe turn_left do
+        it "If the input command is L, the rover turns to Left " do
+            expect (turn_left.direction).to eq('Left')
+            #puts "Successful Left turn"
         end
     end
 

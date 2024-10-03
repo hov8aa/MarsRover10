@@ -1,12 +1,12 @@
 def move_rover
 
-=begin
+#=begin
     def initialize mars_rover (x,y,f,instructions)
         
     end
-=end
+#=end
 
-def turn_left()
+def turn_left
     
 end
 
