@@ -1,9 +1,13 @@
-Class move_rover()
+def move_rover
 
-    def initialize (x,y,f)
-        @x_coordinate = x
-        @y_coordinate = y 
-        @facing = f
+=begin
+    def initialize mars_rover (x,y,f,instructions)
+        
     end
+=end
+
+def turn_left()
+    
+end
 
 end

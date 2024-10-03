@@ -1,11 +1,17 @@
 require_relative '../move_rover'
 
-RSpec.describe move_rover do
+RSpec.describe "move_rover" do
 
 # What to test for
 # 1. What happens in the happy path?
 #   Test case 1:
 #   If the input/instruction is L, the rover successfully turns Left
+    describe turn_left () do
+        it "If the input command is L, we turn the rover to Left " do
+            expect (new 
+            )
+        end
+    end
 
 
 #   Test case 2:
