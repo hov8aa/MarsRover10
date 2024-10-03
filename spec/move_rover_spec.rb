@@ -8,7 +8,7 @@ RSpec.describe "move_rover" do
 #   If the input/instruction is L, the rover successfully turns Left
     describe turn_left do
         it "If the input command is L, the rover turns to Left " do
-            expect (turn_left.direction).to eq('Left')
+            expect (turn_left.instruction).to eq('Left')
             #puts "Successful Left turn"
         end
     end

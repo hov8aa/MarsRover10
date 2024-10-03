@@ -1,13 +1,19 @@
 def move_rover
 
-#=begin
-    def initialize mars_rover (x,y,f,instructions)
-        
-    end
-#=end
+    puts "Enter the grid dimensions"
+    grid_dimentions = gets.chomp
 
-def turn_left
-    
+    puts "enter rover location on grid"
+    rover_loc = gets.chomp
+
+    puts "enter instruction to move left"
+    instruction = gets.chomp
+    turn_left(instruction)
+
 end
 
+def turn_left(instruction)
+    puts "turned left with instruction #{instruction}"
 end
+
+move_rover
