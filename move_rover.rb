@@ -6,14 +6,19 @@ def move_rover
     puts "enter rover location on grid"
     rover_loc = gets.chomp
 
-    puts "enter instruction to move left"
-    instruction = gets.chomp
-    turn_left(instruction)
+    puts "enter the face direction of the rover"
+    rover_face = gets.chomp
 
+    puts "enter instructions to move left or right consequtively as LRLRLR"
+    instructions = gets.chomp
+
+    turn_rover(instructions, rover_face)
 end
 
-def turn_left(instruction)
-    puts "turned left with instruction #{instruction}"
+def turn_rover(instructions, rover_face)
+    instructions.each { |c|
+        #puts "turned left with instruction #{instruction}"
+    }
 end
 
 move_rover

@@ -7,16 +7,24 @@ RSpec.describe "move_rover" do
 #   Test case 1:
 #   If the input/instruction is L, the rover successfully turns Left
 
-    describe "The rover turns left" do
+    #describe "The rover turns left" do
         #let(:instruction) { "left" }
         it "If the input command is Left" do
             instruction = $stdin.gets.chomp
             expect(instruction).to eq('left')
         end
-    end
+    #end
 
 #   Test case 2:
 #   If the input/instruction is R, the rover successfully turns Right
+
+    #describe "The rover turns right" do
+        #let(:instruction) { "left" }
+        it "If the input command is Right" do
+            instruction = $stdin.gets.chomp
+            expect(instruction).to eq('right')
+        end
+    #end
 
 
 #   Test case 3:
