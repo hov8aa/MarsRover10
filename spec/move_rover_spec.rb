@@ -10,9 +10,14 @@ RSpec.describe "move_rover" do
     describe "The rover turns left" do
         #turn_left = turn_left("left")
         let(:instruction) { "left" }
-        it "If the input command is Left, the rover turns to Left " do
+        it "If the input command is Left" do
             expect (instruction).to eq('left')
         end
+    end
+
+    def get_instructions
+        #   Code to read the variable from your ruby file      
+            File.read('move_rover').split("\n").last
     end
 
 #   Test case 2:
