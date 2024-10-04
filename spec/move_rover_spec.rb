@@ -14,7 +14,6 @@ RSpec.describe "move_rover" do
         end
     end
 
-
 #   Test case 2:
 #   If the input/instruction is R, the rover successfully turns Right
 
