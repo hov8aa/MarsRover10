@@ -11,7 +11,7 @@ RSpec.describe "move_rover" do
         #turn_left = turn_left("left")
         let(:instruction) { "left" }
         it "If the input command is Left" do
-            expect (instruction).to eq('left')
+            expect(instruction).to eq('left')
         end
     end
 
