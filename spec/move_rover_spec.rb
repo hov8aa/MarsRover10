@@ -1,7 +1,7 @@
 require_relative '../move_rover'
 
 RSpec.describe "move_rover" do
-
+    let(:move_rover) { instance_double(move_rover) } 
 # What to test for
 # 1. What happens in the happy path?
 #   Test case 1:
@@ -25,6 +25,16 @@ RSpec.describe "move_rover" do
             expect(instruction).to eq('right')
         end
     #end
+
+=begin
+    it "mocking original code" do
+        # Creating a mock of move_rover
+        # Stubbing the method to return a controlled response
+        allow(move_rover).to receive(:turn_rover).with('left', 'North').and_return({ 'new_rover_face' => 'West' })
+        move_rover = move_rover.turn_rover('left','North')
+        expect(move_rover).to eq('left')
+    end
+=end
 
 
 #   Test case 3:

@@ -17,6 +17,7 @@ end
 
 def turn_rover(instruction, rover_face)
     puts "Rover face before turning #{instruction} is #{rover_face}"
+    new_rover_face = nil
     if instruction == "left"
         if rover_face == "North"
             new_rover_face = "West"
