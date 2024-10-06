@@ -3,50 +3,66 @@ def move_rover
     puts "Enter the grid dimensions"
     grid_dimentions = gets.chomp
 
-    puts "enter rover location on grid"
-    rover_loc = gets.chomp
+    puts "enter rover location X coordinate on grid"
+    rover_loc_x = gets.chomp
 
+    puts "enter rover location Y coordinate on grid"
+    rover_loc_y = gets.chomp
+
+#=begin
     puts "enter the face direction of the rover"
     rover_face = gets.chomp
 
-    puts "enter instructions to move left or right consequtively as left / right"
+    puts "enter instructions to move left or right consequtively as LRLRLR"
     instruction = gets.chomp
+#=end
 
-    turn_rover(instruction, rover_face)
+    turn_rover(instruction, rover_face, rover_loc_x, rover_loc_y)
+    #puts "#{rover_loc_x},#{rover_loc_y}"
 end
 
-def turn_rover(instruction, rover_face)
-    puts "Rover face before turning #{instruction} is #{rover_face}"
-    new_rover_face = nil
-    if instruction == "left"
-        if rover_face == "North"
-            new_rover_face = "West"
+def turn_rover(instruction, rover_face, rover_loc_x, rover_loc_y)
+    puts "Rover location before turning #{instruction} is is #{rover_loc_x},#{rover_loc_y}, facing #{rover_face}"
+    #new_rover_face = nil
+    index = 0
+    while index < instruction.length
+        todo = instruction[index]
+        if todo == "L"
+            if rover_face == "North"
+                rover_face = "West"
+            elsif rover_face == "West"
+                rover_face = "South"
+            elsif rover_face == "South"
+                rover_face = "East"
+            elsif rover_face == "East"
+                rover_face = "North"
+            end
         end
-        if rover_face == "West"
-            new_rover_face = "South"
+        if todo == "R"
+            if rover_face == "North"
+                rover_face = "East"
+            elsif rover_face == "East"
+                rover_face = "South"
+            elsif rover_face == "South"
+                rover_face = "West"
+            elsif rover_face == "West"
+                rover_face = "North"
+            end
         end
-        if rover_face == "South"
-            new_rover_face = "East"
+        if todo == "M"
+            if rover_face == "North"
+                rover_loc_y = rover_loc_y.to_i+1
+            elsif rover_face == "West"
+                rover_loc_x = rover_loc_x.to_i-1
+            elsif rover_face == "South"
+                rover_loc_y = rover_loc_y.to_i-1
+            else
+                rover_loc_x = rover_loc_x.to_i+1
+            end
         end
-        if rover_face == "East"
-            new_rover_face = "North"
-        end
+        index += 1
     end
-    if instruction == "right"
-        if rover_face == "North"
-            new_rover_face = "East"
-        end
-        if rover_face == "East"
-            new_rover_face = "South"
-        end
-        if rover_face == "South"
-            new_rover_face = "West"
-        end
-        if rover_face == "West"
-            new_rover_face = "North"
-        end
-    end    
-    puts "Rover face after turning #{instruction} is #{new_rover_face}"
+    puts "Rover Location after turning #{instruction} is #{rover_loc_x},#{rover_loc_y}, facing #{rover_face}"
 end
 
 move_rover
