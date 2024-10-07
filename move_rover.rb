@@ -22,6 +22,14 @@ def turn_rover_right(direction)
     end
 end
 
-def move_forward(location)
-    return 'location+1'
+def move_forward(x,y,direction)
+    if direction == 'n'
+        return 'x,y+1'
+    elsif direction == 'e'
+        return 'x+1,y'
+    elsif direction == 's'
+        return 'x,y-1'
+    elsif direction == 'w'
+        return 'x-1,y'
+    end
 end

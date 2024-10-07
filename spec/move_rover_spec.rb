@@ -38,9 +38,21 @@ RSpec.describe "move_rover" do
         end
     end
 
-    context "move rover" do
-        it "moves rover one step forward" do
-            expect(move_forward('location')).to eq('location+1')
+    context "move rover forward" do
+        it "moves rover one step forward in north direction" do
+            expect(move_forward('x','y','n')).to eq('x,y+1')
+        end
+
+        it "moves rover one step forward in west direction" do
+            expect(move_forward('x','y','w')).to eq('x-1,y')
+        end
+
+        it "moves rover one step forward in south direction" do
+            expect(move_forward('x','y','s')).to eq('x,y-1')
+        end
+
+        it "moves rover one step forward in east direction" do
+            expect(move_forward('x','y','e')).to eq('x+1,y')
         end
     end
 
