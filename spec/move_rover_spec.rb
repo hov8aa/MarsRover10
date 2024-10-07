@@ -38,4 +38,10 @@ RSpec.describe "move_rover" do
         end
     end
 
+    context "move rover" do
+        it "moves rover one step forward" do
+            expect(move_forward('location')).to eq('location+1')
+        end
+    end
+
 end
