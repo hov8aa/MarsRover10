@@ -1,46 +1,41 @@
 require_relative '../move_rover'
 
 RSpec.describe "move_rover" do
-    let(:move_rover) { instance_double(move_rover) } 
-# What to test for
-# 1. What happens in the happy path?
-#   Test case 1:
-#   If the input/instruction is L, the rover successfully turns Left
-
-    #describe "The rover turns left" do
-        #let(:instruction) { "left" }
-        it "If the input command is Left" do
-            instruction = $stdin.gets.chomp
-            expect(instruction).to eq('left')
+    
+    context "turn left" do
+        it "should change from north to west for turn left" do
+            expect(turn_rover_left("n")).to eq("w")
         end
-    #end
 
-#   Test case 2:
-#   If the input/instruction is R, the rover successfully turns Right
-
-    #describe "The rover turns right" do
-        #let(:instruction) { "left" }
-        it "If the input command is Right" do
-            instruction = $stdin.gets.chomp
-            expect(instruction).to eq('right')
+        it "should change from west to south for turn left" do
+            expect(turn_rover_left("w")).to eq("s")
         end
-    #end
 
-=begin
-    it "mocking original code" do
-        # Creating a mock of move_rover
-        # Stubbing the method to return a controlled response
-        allow(move_rover).to receive(:turn_rover).with('left', 'North').and_return({ 'new_rover_face' => 'West' })
-        move_rover = move_rover.turn_rover('left','North')
-        expect(move_rover).to eq('left')
+        it "should change from south to east for turn left" do
+            expect(turn_rover_left("s")).to eq("e")
+        end
+
+        it "should change from east to north for turn left" do
+            expect(turn_rover_left("e")).to eq("n")
+        end
     end
-=end
 
+    context "turn right" do
+        it "should change from north to east for turn right" do
+            expect(turn_rover_right("n")).to eq("e")
+        end
 
-#   Test case 3:
-#   If the input/instruction is M, the rover successfully moves 1 step forward
+        it "should change from east to south for turn right" do
+            expect(turn_rover_right("e")).to eq("s")
+        end
 
+        it "should change from south to west for turn right" do
+            expect(turn_rover_right("s")).to eq("w")
+        end
 
-# 2. What happens when I create an error or add invalid input? (check the validation)
+        it "should change from west to north for turn right" do
+            expect(turn_rover_right("w")).to eq("n")
+        end
+    end
 
 end
