@@ -60,5 +60,9 @@ RSpec.describe "move_rover" do
         it "should find the final rover facing direction if the original face is north" do
             expect(continuous_movement("LMLMLMLMM","N")).to eq('N')
         end
+
+        it "should find the final rover facing direction if the original face is East" do
+            expect(continuous_movement("MMRMMRMRRM","E")).to eq('E')
+        end
     end
 end
