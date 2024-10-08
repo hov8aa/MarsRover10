@@ -35,8 +35,6 @@ def move_forward(x,y,direction)
 end
 
 def continuous_movement(instructions, rover_face)
-    #return 'N'
-    #expect(continuous_movement("LMLMLMLMM","N")).to eq('N')
     i = 0
     while i < instructions.length do
         if instructions[i] == 'L'
@@ -44,9 +42,26 @@ def continuous_movement(instructions, rover_face)
         elsif instructions[i] == 'R'
             rover_face = turn_rover_right(rover_face)
         elsif instructions[i] == 'M'
-            #DoNothingForNow
+            #DoNothing
         end
         i = i+1
     end
     return rover_face
 end
+
+#=begin
+def find_respective_location(x,y,rover_face,instructions)
+    i = 0
+    while i < instructions.length do
+        if instructions[i] == 'L'
+            rover_face = turn_rover_left(rover_face)
+        elsif instructions[i] == 'R'
+            rover_face = turn_rover_right(rover_face)
+        elsif instructions[i] == 'M'
+            #move_forward(x,y,rover_face)
+        end
+        i = i+1
+    end
+    return x,y,rover_face
+end
+#=end
