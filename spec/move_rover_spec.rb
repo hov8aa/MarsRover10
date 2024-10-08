@@ -68,7 +68,7 @@ RSpec.describe "move_rover" do
 
     context "when the location information is also available along with the series of instructions" do
         it "should find the final respective location of the rover along with the new direction of the face of the rover" do
-            expect(find_respective_location("1","2","N","LMLMLMLMM")).to eq("1","3","N")
+            expect(find_respective_location("1","2","N","LMLMLMLMM")).to eq('1,3,N')
         end
     end
 end

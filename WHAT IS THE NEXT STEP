@@ -1,8 +1,14 @@
-What is my Next Step
+What is my Next move
+Find error in find_respective_location
 
-Move left
-Move right 
-Move rover forward
-Next: if the commands are entered as a sequece of letters?
+Resolve:
+ArgumentError:
+       wrong number of arguments (given 3, expected 1)
 
-Recent Commit: git commit -m "all basic tests seem to be running as expected"
+The issue points to a line number on rspec file
+But the changes has only been done in the ruby code file
+
+
+Recent Commit:
+git commit -m "my ruby core seem to break my spefications code somehow, gives me an error:ArgumentError:
+       wrong number of arguments (given 3, expected 1) in `block (3 levels) in <top (required)>'"
