@@ -56,8 +56,9 @@ RSpec.describe "move_rover" do
         end
     end
 
-    context "when the instructions are in the form of a sequence of letters & the original facing direction is known" do
-        it "should find the final facing "
-            expect(continuous_movement("LMLMLMLMM")).to eq()
+    context "when the instructions are in the form of a sequence of letters" do
+        it "should find the final rover facing direction if the original face is north" do
+            expect(continuous_movement("LMLMLMLMM")).to eq('N')
+        end
     end
 end
